@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:monumental_habit/shared/shared.dart';
 
 import 'blocs/blocs.dart';
+import 'config/custom_router.dart';
+import 'screens/screens.dart';
 
 void main() {
   EquatableConfig.stringify = kDebugMode;
@@ -23,17 +25,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: manRope,
       ),
-      home: Scaffold(
-        body: Center(
-            child: Text(
-          'Hi lorem hello fox how do u do',
-          style: TextStyle(fontFamily: manRope, fontSize: 30),
-        )),
-      ),
+      onGenerateRoute: CustomRouter.onGenerateRoute,
+      initialRoute: SplashScreen.routeName,
     );
   }
 }
