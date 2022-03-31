@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:monumental_habit/screens/splash/splash_screen.dart';
+import '../screens/screens.dart';
 
 class CustomRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -11,6 +11,8 @@ class CustomRouter {
             builder: (_) => const Scaffold());
       case SplashScreen.routeName:
         return SplashScreen.route();
+      case IntroScreen.routeName:
+        return IntroScreen.route();
       default:
         return _errorRoute();
     }

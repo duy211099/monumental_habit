@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: manRope,
+        scaffoldBackgroundColor: Colors.white,
       ),
       onGenerateRoute: CustomRouter.onGenerateRoute,
       initialRoute: SplashScreen.routeName,
