@@ -25,7 +25,7 @@ class Swiper extends StatelessWidget {
           TextButton(
             child: const Text(
               'Skip',
-              style: KTextStyle.bodyStyle,
+              style: KTextStyle.labelStyle,
             ),
             onPressed: onSkip,
           ),
@@ -37,8 +37,8 @@ class Swiper extends StatelessWidget {
             child: Text(
               'Next',
               style: active < total - 1
-                  ? KTextStyle.bodyStyle
-                  : KTextStyle.bodyStyle.copyWith(
+                  ? KTextStyle.labelStyle
+                  : KTextStyle.labelStyle.copyWith(
                       color: HSLColor.fromColor(KColors.eclipse)
                           .withLightness(0.7)
                           .toColor()),

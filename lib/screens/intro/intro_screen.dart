@@ -9,7 +9,7 @@ import 'cubit/intro_cubit.dart';
 import 'widgets/intro_widget.dart';
 
 class IntroScreen extends StatelessWidget {
-  IntroScreen({Key? key}) : super(key: key);
+  const IntroScreen({Key? key}) : super(key: key);
   static const String routeName = 'IntroScreen';
 
   static route() {
@@ -17,7 +17,7 @@ class IntroScreen extends StatelessWidget {
       settings: const RouteSettings(name: routeName),
       pageBuilder: (_, __, ___) => BlocProvider<IntroCubit>(
         create: (context) => IntroCubit(),
-        child: IntroScreen(),
+        child: const IntroScreen(),
       ),
     );
   }
@@ -59,46 +59,46 @@ class IntroScreen extends StatelessWidget {
       },
     );
   }
-
-  late List<IntroContent> introContents = [
-    IntroContent(
-      headline: 'WELCOME TO\nMANUMENTAL HABITS',
-      imagePath: 'static/images/intro1.png',
-      subtitle: _introSubtitle,
-    ),
-    IntroContent(
-      headline: 'CREATE NEW\nHABIT EASILY',
-      imagePath: 'static/images/intro2.png',
-      subtitle: _introSubtitle,
-    ),
-    IntroContent(
-      headline: 'KEEP TRACK OF YOUR\nPROGRESS',
-      imagePath: 'static/images/intro3.png',
-      subtitle: _introSubtitle,
-    ),
-    IntroContent(
-      headline: 'JOIN A SUPPORTIVE\nCOMMUNITY',
-      imagePath: 'static/images/intro4.png',
-      subtitle: _introSubtitle,
-    ),
-  ];
-
-  final Widget _introSubtitle = Text.rich(
-    textAlign: TextAlign.center,
-    style: KTextStyle.bodyStyle,
-    TextSpan(
-      children: [
-        const TextSpan(
-          text: 'WE CAN ',
-        ),
-        TextSpan(
-            text: 'HELP YOU ',
-            style: KTextStyle.bodyStyle.copyWith(color: KColors.primaryDark)),
-        const TextSpan(text: 'TO BE A BETTER\nVERSION OF '),
-        TextSpan(
-            text: 'YOURSELF.',
-            style: KTextStyle.bodyStyle.copyWith(color: KColors.primaryDark)),
-      ],
-    ),
-  );
 }
+
+late List<IntroContent> introContents = [
+  IntroContent(
+    headline: 'WELCOME TO\nMANUMENTAL HABITS',
+    imagePath: 'static/images/intro1.png',
+    subtitle: _introSubtitle,
+  ),
+  IntroContent(
+    headline: 'CREATE NEW\nHABIT EASILY',
+    imagePath: 'static/images/intro2.png',
+    subtitle: _introSubtitle,
+  ),
+  IntroContent(
+    headline: 'KEEP TRACK OF YOUR\nPROGRESS',
+    imagePath: 'static/images/intro3.png',
+    subtitle: _introSubtitle,
+  ),
+  IntroContent(
+    headline: 'JOIN A SUPPORTIVE\nCOMMUNITY',
+    imagePath: 'static/images/intro4.png',
+    subtitle: _introSubtitle,
+  ),
+];
+
+final Widget _introSubtitle = Text.rich(
+  textAlign: TextAlign.center,
+  style: KTextStyle.labelStyle,
+  TextSpan(
+    children: [
+      const TextSpan(
+        text: 'WE CAN ',
+      ),
+      TextSpan(
+          text: 'HELP YOU ',
+          style: KTextStyle.labelStyle.copyWith(color: KColors.primaryDark)),
+      const TextSpan(text: 'TO BE A BETTER\nVERSION OF '),
+      TextSpan(
+          text: 'YOURSELF.',
+          style: KTextStyle.labelStyle.copyWith(color: KColors.primaryDark)),
+    ],
+  ),
+);

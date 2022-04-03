@@ -29,10 +29,22 @@ class KTextStyle {
     color: KColors.eclipse,
   );
 
+  static const TextStyle labelStyle = TextStyle(
+    fontSize: 17,
+    color: KColors.eclipse,
+    fontWeight: FontWeight.w600,
+  );
+
   static const TextStyle bodyStyle = TextStyle(
     fontSize: 17,
-    fontWeight: FontWeight.w600,
     color: KColors.eclipse,
+    fontWeight: FontWeight.normal,
+  );
+
+  static const TextStyle buttonStyle = TextStyle(
+    fontSize: 17,
+    color: KColors.eclipse,
+    fontWeight: FontWeight.w700,
   );
 
   static const TextStyle subheadingStyle = TextStyle(

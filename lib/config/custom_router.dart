@@ -1,9 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../screens/screens.dart';
 
 class CustomRouter {
   static Route onGenerateRoute(RouteSettings settings) {
-    print('Route: ${settings.name}');
+    if (kDebugMode) {
+      print('Route: ${settings.name}');
+    }
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
@@ -21,7 +24,9 @@ class CustomRouter {
   }
 
   static Route onGenerateNestedRoute(RouteSettings settings) {
-    print('Route: ${settings.name}');
+    if (kDebugMode) {
+      print('Route: ${settings.name}');
+    }
     switch (settings.name) {
       default:
         return _errorRoute();
