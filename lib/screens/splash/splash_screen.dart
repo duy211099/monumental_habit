@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:monumental_habit/screens/screens.dart';
-import 'package:monumental_habit/shared/fonts.dart';
-import '../../blocs/blocs.dart';
 import '../../shared/shared.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -35,12 +32,12 @@ class SplashScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(
-                  top: screenHeightPercentage(context, percentage: 15)),
+                  top: screenHeightPercentage(context, percentage: 12)),
               child: Align(
                 alignment: Alignment.topCenter,
                 child: Text(
                   'WELCOME TO\nMONUMENTAL\nHABITS',
-                  style: heading1Style.copyWith(fontFamily: klasik),
+                  style: KTextStyle.heading1Style.copyWith(fontFamily: klasik),
                   textAlign: TextAlign.center,
                 ),
               ),
