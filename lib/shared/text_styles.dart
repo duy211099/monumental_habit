@@ -47,6 +47,12 @@ class KTextStyle {
     fontWeight: FontWeight.w700,
   );
 
+  static const TextStyle inputStyle = TextStyle(
+    fontSize: 17,
+    color: KColors.primaryLight,
+    fontWeight: FontWeight.w700,
+  );
+
   static const TextStyle subheadingStyle = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w400,

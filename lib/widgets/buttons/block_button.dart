@@ -8,6 +8,7 @@ class BlockButton extends StatelessWidget {
   final Color backgroundColor;
   final double height;
   final Widget? icon;
+  final EdgeInsetsGeometry padding;
 
   const BlockButton({
     Key? key,
@@ -16,12 +17,13 @@ class BlockButton extends StatelessWidget {
     this.backgroundColor = KColors.primaryLight,
     this.height = 60,
     this.icon,
+    this.padding = const EdgeInsets.fromLTRB(16, 0, 16, 8),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+      padding: padding,
       child: SizedBox(
         height: height,
         child: ElevatedButton(
@@ -29,7 +31,7 @@ class BlockButton extends StatelessWidget {
             children: [
               ..._renderIcon(),
               Expanded(
-                flex: 3,
+                flex: 2,
                 child: Text(
                   content,
                   style: KTextStyle.buttonStyle,

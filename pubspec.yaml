@@ -51,9 +51,13 @@ flutter:
       fonts:
         - asset: static/fonts/manrope/Manrope-Light.ttf
         - asset: static/fonts/manrope/Manrope-Regular.ttf
+          weight: 400
+        - asset: static/fonts/manrope/Manrope-Medium.ttf
+          weight: 500
         - asset: static/fonts/manrope/Manrope-SemiBold.ttf
           weight: 600
         - asset: static/fonts/manrope/Manrope-Bold.ttf
+          weight: 700
   
 # /Users/duy/Study/flutter/monumental_habit/lib/static/fonts/klasik/klasik-regular.otf
 

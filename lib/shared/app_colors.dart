@@ -9,4 +9,5 @@ class KColors {
 
   static const Color primaryDark = Color(0xffFC9D45);
   static const Color primaryLight = Color(0xffFDA758);
+  static const Color primaryBg = Color(0xffFFF6ED);
 }

@@ -1,12 +1,12 @@
-import 'package:flutter/foundation.dart';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import '../screens/screens.dart';
 
 class CustomRouter {
   static Route onGenerateRoute(RouteSettings settings) {
-    if (kDebugMode) {
-      print('Route: ${settings.name}');
-    }
+    log('Route: ${settings.name}');
+
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
@@ -18,15 +18,16 @@ class CustomRouter {
         return IntroScreen.route();
       case LoginScreen.routeName:
         return LoginScreen.route();
+      case RegisterScreen.routeName:
+        return RegisterScreen.route();
       default:
         return _errorRoute();
     }
   }
 
   static Route onGenerateNestedRoute(RouteSettings settings) {
-    if (kDebugMode) {
-      print('Route: ${settings.name}');
-    }
+    log('Route: ${settings.name}');
+
     switch (settings.name) {
       default:
         return _errorRoute();

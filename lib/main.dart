@@ -29,6 +29,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: manRope,
         scaffoldBackgroundColor: Colors.white,
+        colorScheme: ThemeData().colorScheme.copyWith(
+              primary: KColors.primaryLight,
+            ),
       ),
       onGenerateRoute: CustomRouter.onGenerateRoute,
       initialRoute: SplashScreen.routeName,

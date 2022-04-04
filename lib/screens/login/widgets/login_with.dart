@@ -27,7 +27,7 @@ class LogInWithWidget extends StatelessWidget {
           backgroundColor: Colors.white,
           height: 50,
           icon: SvgPicture.asset(
-            'static/images/svg/google.svg',
+            '${KPaths.svg}google.svg',
           ),
           onPressed: () {},
         ),
@@ -35,7 +35,7 @@ class LogInWithWidget extends StatelessWidget {
           content: 'Continue with Facebook',
           backgroundColor: Colors.white,
           icon: SvgPicture.asset(
-            'static/images/svg/facebook.svg',
+            '${KPaths.svg}facebook.svg',
           ),
           height: 50,
           onPressed: () {},

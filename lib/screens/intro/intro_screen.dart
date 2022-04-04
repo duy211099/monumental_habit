@@ -64,22 +64,22 @@ class IntroScreen extends StatelessWidget {
 late List<IntroContent> introContents = [
   IntroContent(
     headline: 'WELCOME TO\nMANUMENTAL HABITS',
-    imagePath: 'static/images/intro1.png',
+    imagePath: '${KPaths.images}intro1.png',
     subtitle: _introSubtitle,
   ),
   IntroContent(
     headline: 'CREATE NEW\nHABIT EASILY',
-    imagePath: 'static/images/intro2.png',
+    imagePath: '${KPaths.images}intro2.png',
     subtitle: _introSubtitle,
   ),
   IntroContent(
     headline: 'KEEP TRACK OF YOUR\nPROGRESS',
-    imagePath: 'static/images/intro3.png',
+    imagePath: '${KPaths.images}intro3.png',
     subtitle: _introSubtitle,
   ),
   IntroContent(
     headline: 'JOIN A SUPPORTIVE\nCOMMUNITY',
-    imagePath: 'static/images/intro4.png',
+    imagePath: '${KPaths.images}intro4.png',
     subtitle: _introSubtitle,
   ),
 ];

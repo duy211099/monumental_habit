@@ -11,7 +11,7 @@ const Widget verticalSpaceTiny = SizedBox(height: 4.0);
 const Widget verticalSpaceSmall = SizedBox(height: 8.0);
 const Widget verticalSpaceRegular = SizedBox(height: 16.0);
 const Widget verticalSpaceMedium = SizedBox(height: 24.0);
-const Widget verticalSpaceLarge = SizedBox(height: 40.0);
+const Widget verticalSpaceLarge = SizedBox(height: 48.0);
 
 // Screen Size helpers
 
