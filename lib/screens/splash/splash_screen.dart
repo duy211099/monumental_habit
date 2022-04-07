@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).pushNamed(IntroScreen.routeName);
+      Navigator.of(context).pushReplacementNamed(IntroScreen.routeName);
     });
     return WillPopScope(
       onWillPop: () async => false,

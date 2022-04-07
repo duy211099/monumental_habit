@@ -23,113 +23,122 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          verticalSpaceLarge,
-          Image.asset(
-            fit: BoxFit.contain,
-            '${KPaths.images}/register.png',
-            height: screenHeightPercentage(context, percentage: 15.0),
-          ),
-          verticalSpaceMedium,
-          Text(
-            'CREATE YOUR ACCOUNT',
-            style: KTextStyle.heading3Style.copyWith(fontFamily: klasik),
-            textAlign: TextAlign.center,
-          ),
-          verticalSpaceMedium,
-          Form(
-            key: _formKey,
+      body: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                CustomTextFormField(
-                  fillColor: Colors.white,
-                  icon: const Icon(Icons.account_circle_outlined),
-                  hintText: 'Username',
-                  onChanged: (a) {},
+                verticalSpaceLarge,
+                Image.asset(
+                  fit: BoxFit.contain,
+                  '${KPaths.images}/register.png',
+                  height: screenHeightPercentage(context, percentage: 15.0),
                 ),
-                CustomTextFormField(
-                  fillColor: Colors.white,
-                  icon: const Icon(Icons.mail_outline),
-                  hintText: 'Email',
-                  onChanged: (a) {},
-                ),
-                CustomTextFormField(
-                  fillColor: Colors.white,
-                  icon: const Icon(Icons.lock_outline),
-                  hintText: 'Password',
-                  onChanged: (a) {},
-                ),
-                verticalSpaceSmall,
-                CustomCheckBox(
-                  value: false,
-                  onChanged: (value) {},
-                  label: 'Keep me signed in',
-                ),
-                CustomCheckBox(
-                  value: true,
-                  onChanged: (value) {},
-                  label: 'Email me about special pricing and more',
-                ),
-                verticalSpaceSmall,
-                BlockButton(
-                  content: 'Create Account',
-                  onPressed: () {},
-                ),
+                verticalSpaceMedium,
                 Text(
-                  'Or sign in with',
-                  style: KTextStyle.bodyStyle.copyWith(fontSize: 15),
+                  'CREATE YOUR ACCOUNT',
+                  style: KTextStyle.heading3Style.copyWith(fontFamily: klasik),
+                  textAlign: TextAlign.center,
                 ),
                 verticalSpaceMedium,
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: BlockButton(
-                        padding: const EdgeInsets.only(right: 8, left: 16),
-                        backgroundColor: Colors.white,
-                        content: 'Google',
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      CustomTextFormField(
+                        fillColor: Colors.white,
+                        icon: const Icon(Icons.account_circle_outlined),
+                        hintText: 'Username',
+                        onChanged: (a) {},
+                      ),
+                      CustomTextFormField(
+                        fillColor: Colors.white,
+                        icon: const Icon(Icons.mail_outline),
+                        hintText: 'Email',
+                        onChanged: (a) {},
+                      ),
+                      CustomTextFormField(
+                        fillColor: Colors.white,
+                        icon: const Icon(Icons.lock_outline),
+                        hintText: 'Password',
+                        onChanged: (a) {},
+                      ),
+                      verticalSpaceSmall,
+                      CustomCheckBox(
+                        value: false,
+                        onChanged: (value) {},
+                        label: 'Keep me signed in',
+                      ),
+                      CustomCheckBox(
+                        value: true,
+                        onChanged: (value) {},
+                        label: 'Email me about special pricing and more',
+                      ),
+                      verticalSpaceSmall,
+                      BlockButton(
+                        content: 'Create Account',
                         onPressed: () {},
-                        icon: SvgPicture.asset(
-                          '${KPaths.svg}google.svg',
+                      ),
+                      Text(
+                        'Or sign in with',
+                        style: KTextStyle.bodyStyle.copyWith(fontSize: 15),
+                      ),
+                      verticalSpaceMedium,
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: BlockButton(
+                              padding:
+                                  const EdgeInsets.only(right: 8, left: 16),
+                              backgroundColor: Colors.white,
+                              content: 'Google',
+                              onPressed: () {},
+                              icon: SvgPicture.asset(
+                                '${KPaths.svg}google.svg',
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: BlockButton(
+                              padding:
+                                  const EdgeInsets.only(left: 8, right: 16),
+                              backgroundColor: Colors.white,
+                              content: 'Facebook',
+                              onPressed: () {},
+                              icon: SvgPicture.asset(
+                                '${KPaths.svg}facebook.svg',
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      verticalSpaceMedium,
+                      GestureDetector(
+                        onTap: () => Navigator.of(context).pop(),
+                        child: Text.rich(
+                          textAlign: TextAlign.center,
+                          style: KTextStyle.labelStyle.copyWith(
+                            fontSize: 15,
+                          ),
+                          TextSpan(
+                            children: [
+                              const TextSpan(
+                                text: 'Already have an account? ',
+                              ),
+                              TextSpan(
+                                  text: 'Sign in',
+                                  style: KTextStyle.labelStyle
+                                      .copyWith(fontWeight: FontWeight.w700)),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Expanded(
-                      child: BlockButton(
-                        padding: const EdgeInsets.only(left: 8, right: 16),
-                        backgroundColor: Colors.white,
-                        content: 'Facebook',
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          '${KPaths.svg}facebook.svg',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                verticalSpaceMedium,
-                GestureDetector(
-                  onTap: () => Navigator.of(context).pop(),
-                  child: Text.rich(
-                    textAlign: TextAlign.center,
-                    style: KTextStyle.labelStyle.copyWith(
-                      fontSize: 15,
-                    ),
-                    TextSpan(
-                      children: [
-                        const TextSpan(
-                          text: 'Already have an account? ',
-                        ),
-                        TextSpan(
-                            text: 'Sign in',
-                            style: KTextStyle.labelStyle
-                                .copyWith(fontWeight: FontWeight.w700)),
-                      ],
-                    ),
+                    ],
                   ),
-                ),
+                )
               ],
             ),
           )

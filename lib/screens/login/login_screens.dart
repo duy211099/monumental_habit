@@ -19,31 +19,35 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async => false,
-      child: Scaffold(
-        body: Stack(
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("static/images/login_bg.png"),
-                  fit: BoxFit.cover,
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("static/images/login_bg.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: SafeArea(
+                  bottom: false,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const LogInWithWidget(),
+                      verticalSpaceRegular,
+                      LoginBottomSheet()
+                    ],
+                  ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: screenHeightPercentage(context, percentage: 20)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const Spacer(),
-                  const LogInWithWidget(),
-                  verticalSpaceRegular,
-                  LoginBottomSheet()
-                ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
